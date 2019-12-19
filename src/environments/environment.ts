@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   routerLoginAdmin: 'ng-admin',
-  tiny_api_key: '62l92kwn54azc3rs68ix68zolih2envsv48p5nn49vunt8tv'
-  // hostServer: ''
+  tiny_api_key: '62l92kwn54azc3rs68ix68zolih2envsv48p5nn49vunt8tv',
+  hostServer: 'localhost:3000'
 };
 
 /*
