@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { PageErrorComponent } from './page-error/page-error/page-error.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
@@ -6,13 +7,13 @@ import { routes as userRouter } from './user/user-routing.module';
 
 export const APP_ROUTES: Routes = [
   {
-    path: 'admin',
+    path: environment.routerLoginAdmin,
     children: [
       ...adminRouter
     ]
   },
   {
-    path: 'user',
+    path: '',
     children: [
       ...userRouter
     ]
