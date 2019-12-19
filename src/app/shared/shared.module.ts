@@ -8,8 +8,12 @@ import { CommonModule } from '@angular/common';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -20,9 +24,17 @@ import { ReactiveFormsModule } from '@angular/forms';
     SelectDropdownComponent
   ],
   imports: [
+    HttpClientModule,
     CommonModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    })
   ],
   exports: [
     UserLayoutComponent,
