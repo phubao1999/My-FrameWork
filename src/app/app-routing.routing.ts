@@ -1,11 +1,25 @@
-import { NgModule } from '@angular/core';
+import { PageErrorComponent } from './page-error/page-error/page-error.component';
 import { Routes, RouterModule } from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
+import { routes as adminRouter } from './admin/admin-routing.module';
+import { routes as userRouter } from './user/user-routing.module';
 
-
-const routes: Routes = [];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+export const APP_ROUTES: Routes = [
+  {
+    path: 'admin',
+    children: [
+      ...adminRouter
+    ]
+  },
+  {
+    path: 'user',
+    children: [
+      ...userRouter
+    ]
+  },
+  {
+    path: '**',
+    component: PageErrorComponent,
+  }
+];
+export const Routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
