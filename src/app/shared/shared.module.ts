@@ -1,3 +1,6 @@
+import { SelectDropdownComponent } from './components/select-dropdown/select-dropdown.component';
+import { ModelSearchComponent } from './components/model-search/model-search.component';
+import { DataTableComponent } from './components/data-table/data-table.component';
 import { RouterModule } from '@angular/router';
 import { UserLayoutComponent } from './layout/user-layout/user-layout.component';
 import { NgModule } from '@angular/core';
@@ -11,7 +14,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     UserLayoutComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
+    DataTableComponent,
+    ModelSearchComponent,
+    SelectDropdownComponent
   ],
   imports: [
     CommonModule,
@@ -21,6 +27,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   exports: [
     UserLayoutComponent,
     AdminLayoutComponent,
+    DataTableComponent,
+    ModelSearchComponent,
+    SelectDropdownComponent,
     HttpModule,
     ReactiveFormsModule
   ],

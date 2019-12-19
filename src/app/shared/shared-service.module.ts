@@ -1,3 +1,4 @@
+import { PagerService } from './services/helpers/pager.service';
 import { TimeService } from './services/helpers/time.service';
 import { ValidateService } from './services/helpers/validate.service';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
@@ -7,7 +8,8 @@ import { BaseService } from './services/helpers/base.service';
     providers: [
         BaseService,
         ValidateService,
-        TimeService
+        TimeService,
+        PagerService
     ]
 })
 export class SharedServicesModule {
