@@ -1,3 +1,5 @@
+import { FooterComponent } from './core/footer/footer.component';
+import { NavComponent } from './core/nav/nav.component';
 import { EditorComponent } from './components/editor/editor.component';
 import { SelectDropdownComponent } from './components/select-dropdown/select-dropdown.component';
 import { ModelSearchComponent } from './components/model-search/model-search.component';
@@ -24,7 +26,9 @@ export function createTranslateLoader(http: HttpClient) {
     DataTableComponent,
     ModelSearchComponent,
     SelectDropdownComponent,
-    EditorComponent
+    EditorComponent,
+    NavComponent,
+    FooterComponent
   ],
   imports: [
     HttpClientModule,
@@ -47,6 +51,8 @@ export function createTranslateLoader(http: HttpClient) {
     ModelSearchComponent,
     SelectDropdownComponent,
     EditorComponent,
+    NavComponent,
+    FooterComponent,
     HttpModule,
     ReactiveFormsModule
   ],
