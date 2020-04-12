@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { PageErrorComponent } from './page-error/page-error/page-error.component';
 import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageErrorComponent,
     UserComponent,
-    AdminComponent
+    AdminComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

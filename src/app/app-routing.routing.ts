@@ -1,3 +1,6 @@
+import { AuthComponent } from './auth/auth.component';
+import { UserLayoutComponent } from './shared/layout/user-layout/user-layout.component';
+import { UserComponent } from './user/user.component';
 import { environment } from './../environments/environment';
 import { PageErrorComponent } from './page-error/page-error/page-error.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -7,16 +10,13 @@ import { routes as userRouter } from './user/user-routing.module';
 
 export const APP_ROUTES: Routes = [
   {
-    path: environment.routerLoginAdmin,
-    children: [
-      ...adminRouter
-    ]
+    path: '',
+    component: UserLayoutComponent
   },
   {
-    path: '',
-    children: [
-      ...userRouter
-    ]
+    path: 'auth',
+    component: AuthComponent,
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   {
     path: '**',
