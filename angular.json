@@ -154,5 +154,8 @@
       }
     }
   },
-  "defaultProject": "my-fw"
+  "defaultProject": "my-fw",
+  "cli": {
+    "analytics": false
+  }
 }
