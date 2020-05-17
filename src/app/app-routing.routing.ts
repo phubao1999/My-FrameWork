@@ -1,17 +1,14 @@
-import { AuthComponent } from './auth/auth.component';
-import { UserLayoutComponent } from './shared/layout/user-layout/user-layout.component';
-import { UserComponent } from './user/user.component';
-import { environment } from './../environments/environment';
-import { PageErrorComponent } from './page-error/page-error/page-error.component';
-import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
-import { routes as adminRouter } from './admin/admin-routing.module';
-import { routes as userRouter } from './user/user-routing.module';
+import { RouterModule, Routes } from '@angular/router';
+import { AuthComponent } from './auth/auth.component';
+import { PageErrorComponent } from './page-error/page-error/page-error.component';
+import { UserLayoutComponent } from './shared/layout/user-layout/user-layout.component';
 
 export const APP_ROUTES: Routes = [
   {
     path: '',
-    component: UserLayoutComponent
+    component: UserLayoutComponent,
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule)
   },
   {
     path: 'auth',

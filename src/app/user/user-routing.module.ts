@@ -1,15 +1,10 @@
-import { UserLayoutComponent } from './../shared/layout/user-layout/user-layout.component';
-import { UserComponent } from './user.component';
-import { NgModule, ModuleWithProviders } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ModuleWithProviders } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { UserComponent } from './user.component';
 
 export const routes: Routes = [
     {
-        path: '', component: UserLayoutComponent,
-        children: [
-            {path: '', component: UserComponent}
-        ]
+        path: '', component: UserComponent,
     }
 ];
 
